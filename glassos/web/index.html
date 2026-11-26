@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>עוזר מקומי</title>
+<link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="/assets/style.css">
+<script src="/assets/chat.js" defer></script>
+</head>
+<body>
+<main>
+  <form id="unlock">
+    <span class="mark" aria-hidden="true">✳</span>
+    <h1>עוזר מקומי</h1>
+    <label for="token">מפתח גישה</label>
+    <input id="token" type="password" autocomplete="off" spellcheck="false" required minlength="32" maxlength="256" dir="ltr">
+    <button class="accent">כניסה לצ׳אט</button>
+    <p id="unlock-status" role="status"></p>
+  </form>
+  <section id="chat" hidden>
+    <aside id="sidebar" aria-label="שיחות">
+      <strong>עוזר מקומי</strong>
+      <button id="clear" type="button">＋ שיחה חדשה</button>
+      <nav id="threads" aria-label="שיחות פתוחות"></nav>
+      <button id="lock" type="button">נעילת הצ׳אט</button>
+    </aside>
+    <div class="conversation">
+      <header>
+        <button id="toggle" type="button" aria-controls="sidebar" aria-expanded="true" aria-label="הצגה או הסתרה של השיחות">☰</button>
+        <span id="title">שיחה חדשה</span>
+      </header>
+      <div id="transcript">
+        <div id="welcome">
+          <span class="mark" aria-hidden="true">✳</span>
+          <h1>איך אפשר לעזור?</h1>
+          <div id="suggestions">
+            <button type="button">עזור לי לנסח הודעה</button>
+            <button type="button">הסבר לי נושא חדש</button>
+            <button type="button">תן לי רעיונות לפרויקט</button>
+          </div>
+        </div>
+        <ol id="messages" aria-label="הודעות"></ol>
+      </div>
+      <div class="composer">
+        <p id="status" role="status"></p>
+        <form id="compose">
+          <textarea id="prompt" aria-label="הודעה" placeholder="מה תרצה לשאול?" maxlength="1500" rows="2" dir="auto" required></textarea>
+          <div class="toolbar"><label>מודל <select id="model" dir="ltr" disabled></select></label><button id="send" class="accent" aria-label="שליחה">↑</button></div>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+</body>
+</html>
